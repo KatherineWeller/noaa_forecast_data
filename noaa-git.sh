@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOGFILE=/KatherineWeller/noaa_forecast_ddata/noaa-logs/git.log
+LOGFILE=/KatherineWeller/noaa_forecast_data/noaa-logs/git.log
 TIMESTAMP=$(date +"%D %T")
 
 echo -e "\n\n-------------- $TIMESTAMP --------------" 2>&1 | tee -a $LOGFILE
