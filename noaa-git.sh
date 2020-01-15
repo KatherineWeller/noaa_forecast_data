@@ -7,43 +7,43 @@ echo -e "\n\n-------------- $TIMESTAMP --------------" 2>&1 | tee -a $LOGFILE
 
 echo -e "\n\nPull the R Script from GitHub:\n" 2>&1 | tee -a $LOGFILE
 
-cd /data/SCCData/noaa-source #https://github.com/CareyLabVT/SCCData/tree/noaa-source
+cd /KatherineWeller/noaa_forecast_data/noaa-source #https://github.com/KatherineWeller/noaa_forecast_data
 git pull 2>&1 | tee -a $LOGFILE
 echo -e "\n" 2>&1 | tee -a $LOGFILE
 for i in *.R; do Rscript $i 2>&1 | tee -a $LOGFILE; done
 
 echo -e "\n\nGitHub Server:\n" 2>&1 | tee -a $LOGFILE
 
-cd /data/SCCData/NOAA #https://github.com/CareyLabVT/SCCData/tree/noaa-data
+cd /KatherineWeller/noaa_forecast_data/NOAA #https://github.com/KatherineWeller/noaa_forecast_data
 #git pull &>> ~/data/SCCData/noaa-logs/git.log
 git add *.*
 git commit -m "$TIMESTAMP: Git Backup" 2>&1 | tee -a $LOGFILE
-/home/scc/applications/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
+/"Macintosh HD"/Users/CarterMattox/Documents/katts_folder/FLARE-scripts/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
 
-cd /data/SCCData/NOAA/FCRE #https://github.com/CareyLabVT/noaa_gefs_forecasts/tree/fcre
+cd /KatherineWeller/noaa_forecast_data/NOAA/FCRE #https://github.com/KatherineWeller/noaa_forecast_data
 #git pull &>> ~/data/SCCData/noaa-logs/git.log
 git add .
 git commit -m "$TIMESTAMP: Git Backup" 2>&1 | tee -a $LOGFILE
-/home/scc/applications/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
+/"Macintosh HD"/Users/CarterMattox/Documents/katts_folder/FLARE-scripts/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
 
-cd /data/SCCData/NOAA/SUGG #https://github.com/CareyLabVT/noaa_gefs_forecasts/tree/sugg
+cd /KatherineWeler/noaa_forecast_data/NOAA/SUGG #https://github.com/KatherineWeller/noaa_forecast_data
 #git pull &>> ~/data/SCCData/noaa-logs/git.log
 git add .
 git commit -m "$TIMESTAMP: Git Backup" 2>&1 | tee -a $LOGFILE
-/home/scc/applications/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
+/"Macintosh HD"/Users/CarterMattox/Documents/katts_folder/FLARE-scripts/applications/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
 
-cd /data/SCCData/NOAA/SUNP #https://github.com/CareyLabVT/noaa_gefs_forecasts/tree/sunp
+cd /KatherineWeller/noaa_forecast_data/NOAA/SUNP #https://github.com/KatherineWeller/noaa_forecast_data
 #git pull &>> ~/data/SCCData/noaa-logs/git.log
 git add .
 git commit -m "$TIMESTAMP: Git Backup" 2>&1 | tee -a $LOGFILE
-/home/scc/applications/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
+/"Macintosh HD"/Users/CarterMattox/Documents/katts_folder/FLARE-scripts/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
 
 echo -e "\n\nPush the Logs to GitHub:\n" 2>&1 | tee -a $LOGFILE
 
-cd /data/SCCData/noaa-logs #https://github.com/CareyLabVT/SCCData/tree/noaa-logs
+cd /KatherineWeller/noaa_forecast_data/noaa-logs #https://github.com/KatherineWeller/noaa_forecast_data
 git add .
 git commit -m "$TIMESTAMP: Logs" 2>&1 | tee -a $LOGFILE
-/home/scc/applications/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
+/"Macintosh HD"/Users/CarterMattox/Documents/katts_folder/FLARE-scripts/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
 git add .
 git commit -m "$TIMESTAMP: Logs" 2>&1 | tee -a $LOGFILE
-/home/scc/applications/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
+/"Macintosh HD"/Users/CarterMattox/Documents/katts_folder/FLARE-scripts/git-retry.sh push -f 2>&1 | tee -a $LOGFILE
